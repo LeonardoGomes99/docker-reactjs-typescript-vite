@@ -10,11 +10,11 @@ WORKDIR /usr/src/app
 
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
-RUN npm install @types/react@latest @types/react-dom@latest --dev
-RUN npm install react-scripts
+RUN yarn add @types/react@latest @types/react-dom@latest --dev
+RUN yarn add react-scripts
 RUN rm -rf node_modules
 RUN rm -f package-lock.json
-RUN npm cache clean --force
-RUN npm install
+RUN yarn cache clean --force
+RUN yarn install
 
-CMD npm run dev
+CMD yarn run dev
